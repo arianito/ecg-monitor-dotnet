@@ -1,0 +1,16 @@
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\bin\Debug\ECG Monitoring.XML
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\bin\Debug\ECG Monitoring.exe
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\bin\Debug\ECG Monitoring.pdb
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.box.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formProcess.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formTime.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formStatistic.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formPrint.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formSettings.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formMain.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.formAnalyse.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.Properties.Resources.resources
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ecgmonitor.csproj.GenerateResource.Cache
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ECG Monitoring.exe
+C:\Users\Aryan\Documents\Visual Studio 2008\Projects\ecgmonitor\ecgmonitor\obj\Debug\ECG Monitoring.pdb

@@ -1,0 +1,857 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ECG Monitoring</name>
+    </assembly>
+    <members>
+        <member name="T:ecgmonitor.box">
+             <summary>
+               A strongly-typed resource class, for looking up localized strings, etc.
+             </summary>
+            </member>
+        <member name="P:ecgmonitor.box.ResourceManager">
+             <summary>
+               Returns the cached ResourceManager instance used by this class.
+             </summary>
+            </member>
+        <member name="P:ecgmonitor.box.Culture">
+             <summary>
+               Overrides the current thread's CurrentUICulture property for all
+               resource lookups using this strongly typed resource class.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.formProcess.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formProcess.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formProcess.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="T:FilterNotch">
+             <summary>
+             Fast one pass notch filter
+             </summary>
+            </member>
+        <member name="M:FilterNotch.Process(SignalSamples,System.Int32,System.Double)">
+             <summary>
+             Process one pass notch filter
+             </summary>
+             <param name="source">Input signal</param>
+             <param name="fsmpl">Frequency sample rate</param>
+             <param name="fk">Filter ratio</param>
+             <returns></returns>
+            </member>
+        <member name="F:ecgmonitor.formTime.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formTime.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formTime.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.formStatistic.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formStatistic.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formStatistic.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.EcgStatistic">
+             <summary>
+             ECG samples statistics.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.formPrint.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formPrint.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formPrint.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.formSettings.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formSettings.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formSettings.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.Ecg">
+             <summary>
+             ECG critical point:
+             Storing information about ecg critical points.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Ecg.id">
+             <summary>
+             Order in list.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Ecg.idx">
+             <summary>
+             Address of critical point.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Ecg.value">
+             <summary>
+             Value critical point.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.Ecg.#ctor(System.Int32,System.Single)">
+             <summary>
+             
+             </summary>
+             <param name="i">Address of critical point.</param>
+             <param name="value">Value critical point.</param>
+            </member>
+        <member name="T:ecgmonitor.EcgDetectionType">
+             <summary>
+             ECG boundary detection type.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.EcgCharacteristics.order">
+             <summary>
+             ecg critical point names in order.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.EcgCharacteristics.data">
+             <summary>
+             List of ecg critical points.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.EcgCharacteristics.rs">
+             <summary>
+             Distance between highest and lowest value on each ecg signal.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.EcgCharacteristics.lastCharacteristic">
+             <summary>
+             Last critical point address in order to use on looping.
+             </summary>
+             <returns>Last critical point address</returns>
+            </member>
+        <member name="P:ecgmonitor.EcgCharacteristics.Item(System.Int32)">
+             <summary>
+             get ecg characteristics by id
+             </summary>
+             <param name="i">parameter index</param>
+             <returns></returns>
+            </member>
+        <member name="P:ecgmonitor.EcgCharacteristics.Item(System.String)">
+             <summary>
+             get ecg characteristics by id
+             </summary>
+             <param name="i">parameter name</param>
+             <returns></returns>
+            </member>
+        <member name="T:FilterButterworth">
+             <summary>
+             Fast and industrial low passfilter.
+             </summary>
+            </member>
+        <member name="M:FilterButterworth.#ctor(System.Single,System.Int32,System.Single)">
+             <summary>
+             Initialize filter.
+             </summary>
+             <param name="frequency">Cutoff frequency.</param>
+             <param name="sampleRate">Signal samplerate.</param>
+             <param name="resonance">Signal resonance ratio.</param>
+            </member>
+        <member name="M:FilterButterworth.Update(System.Single)">
+             <summary>
+             Apply filter with new value.
+             </summary>
+             <param name="newInput">new value</param>
+            </member>
+        <member name="P:FilterButterworth.Value">
+             <summary>
+             Filtered value.
+             </summary>
+            </member>
+        <member name="F:SignalSamples.list">
+             <summary>
+             samples list
+             </summary>
+            </member>
+        <member name="F:SignalSamples.sampleRate">
+             <summary>
+             data sample rate
+             </summary>
+            </member>
+        <member name="M:SignalSamples.Add(Signal)">
+             <summary>
+             insert signal to collections
+             </summary>
+             <param name="item"></param>
+            </member>
+        <member name="M:SignalSamples.NoiseReduction(System.Int32)">
+             <summary>
+             noise reduction averaging method, in order to remove dc from signal
+             </summary>
+             <param name="severity">hardness</param>
+            </member>
+        <member name="M:SignalSamples.Amplify(Signal,Signal)">
+             <summary>
+             amplitude signals by two delta samples
+             </summary>
+             <param name="deltaGreat">greater signal amplirude</param>
+             <param name="deltaLess">lesser signal amplitude</param>
+            </member>
+        <member name="M:SignalSamples.Amplify(System.Int32,System.Int32,Signal,Signal)">
+             <summary>
+             amplitude signals by two delta samples
+             </summary>
+             <param name="start">start index</param>
+             <param name="count">count</param>
+             <param name="deltaGreat">greater signal amplirude</param>
+             <param name="deltaLess">lesser signal amplitude</param>
+            </member>
+        <member name="M:SignalSamples.Normalize">
+             <summary>
+             normalize all signals
+             </summary>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.Normalize(System.Int32,System.Int32)">
+             <summary>
+             normalize signals bwtween indexes
+             </summary>
+             <param name="start">start index</param>
+             <param name="count">count</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.Filter(System.Int32,System.Int32,System.Single)">
+             <summary>
+             butterwoth filter handling from signal samples
+             </summary>
+             <param name="freq">Cutoff frequency</param>
+             <param name="sampleRate">Signal samplerate</param>
+             <param name="resonanse">Signal resonance ratio</param>
+            </member>
+        <member name="M:SignalSamples.Crop(System.Int32,System.Int32)">
+             <summary>
+             crop a signal
+             </summary>
+             <param name="start"></param>
+             <param name="count"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindDelta(System.Int32,System.Int32,System.Int32)">
+             <summary>
+             find ecg signal characteristics using min method
+             </summary>
+             <param name="lead"></param>
+             <param name="i0"></param>
+             <param name="i1"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMax(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+             <summary>
+             find max values in samples with specified range
+             </summary>
+             <param name="i0">start index</param>
+             <param name="i1">count</param>
+             <param name="chanel1">chanel 1 eanabled</param>
+             <param name="chanel2">chanel 2 eanabled</param>
+             <param name="chanel3">chanel 3 eanabled</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMax(System.Int32,System.Int32)">
+             <summary>
+             find max values in samples with specified range
+             </summary>
+             <param name="i0">start index</param>
+             <param name="i1">count</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMax">
+             <summary>
+             find max values in samples
+             </summary>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMin(System.Int32,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+             <summary>
+             find min values in samples with specified range
+             </summary>
+             <param name="i0">start index</param>
+             <param name="i1">count</param>
+             <param name="chanel1">chanel 1 eanabled</param>
+             <param name="chanel2">chanel 2 eanabled</param>
+             <param name="chanel3">chanel 3 eanabled</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMin(System.Int32,System.Int32)">
+             <summary>
+             find min values in samples with specified range
+             </summary>
+             <param name="i0">start index</param>
+             <param name="i1">count</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMin">
+             <summary>
+             find min values in samples with specified range
+             </summary>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMax(System.Int32,System.Int32,System.Int32)">
+             <summary>
+             find single lead max value
+             </summary>
+             <param name="lead">lead number</param>
+             <param name="i0">start index</param>
+             <param name="i1">count</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMax(System.Int32)">
+             <summary>
+             find single lead max value
+             </summary>
+             <param name="lead">lead number</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMin(System.Int32,System.Int32,System.Int32)">
+             <summary>
+             find single lead min value
+             </summary>
+             <param name="lead">lead number</param>
+             <param name="i0">start index</param>
+             <param name="i1">count</param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindAvg(System.Int32,System.Int32,System.Int32)">
+             <summary>
+             find average of signal in range
+             </summary>
+             <param name="lead"></param>
+             <param name="i0"></param>
+             <param name="i1"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.FindMin(System.Int32)">
+             <summary>
+             find minumum signal by lead
+             </summary>
+             <param name="lead"></param>
+             <returns></returns>
+            </member>
+        <member name="M:SignalSamples.Clear">
+             <summary>
+             clear signals
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formAnalyse.run">
+             <summary>
+             thread for faster analysing
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.formAnalyse.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formAnalyse.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formAnalyse.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.ribon">
+             <summary>
+             Amazing ribon created by aryan alikhani, alikhaniaryan@gmail.com
+             GNU public liscense
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.Slider">
+             <summary>
+             Time scrolling control
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.locked">
+             <summary>
+             lock slider to zero
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.sampleRate">
+             <summary>
+             data sample rate
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.blocksCount">
+             <summary>
+             maximum blocks to read
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.perPage">
+             <summary>
+             blocks available in page
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.seek">
+             <summary>
+             seek to position block
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.s2">
+             <summary>
+             start time
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.blocks">
+             <summary>
+             blocks to show
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.critical">
+             <summary>
+             points when button pressed
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.Slider.page">
+             <summary>
+             current page
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.SignalGraph.print(System.Drawing.Graphics,System.Drawing.Rectangle,System.Int32,System.Int32)">
+             <summary>
+             draw paint for printing
+             </summary>
+             <param name="g"></param>
+             <param name="bb"></param>
+             <param name="i0"></param>
+             <param name="i1"></param>
+            </member>
+        <member name="T:ecgmonitor.painti">
+             <summary>
+             Amazing painting library created by aryan alikhani, alikhaniaryan@gmail.com
+             GNU public liscense
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.button">
+             <summary>
+             Amazing button created by aryan alikhani, alikhaniaryan@gmail.com
+             GNU public liscense
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formMain.zero(System.Int32)">
+             <summary>
+             make zero before number
+             </summary>
+             <param name="inp"></param>
+             <returns></returns>
+            </member>
+        <member name="F:ecgmonitor.formMain.components">
+             <summary>
+             Required designer variable.
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.formMain.Dispose(System.Boolean)">
+             <summary>
+             Clean up any resources being used.
+             </summary>
+             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+            </member>
+        <member name="M:ecgmonitor.formMain.InitializeComponent">
+             <summary>
+             Required method for Designer support - do not modify
+             the contents of this method with the code editor.
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.formi">
+             <summary>
+             Amazing form created by aryan alikhani, alikhaniaryan@gmail.com
+             GNU public liscense
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.SerializedFormat">
+             <summary>
+             Serialization format types.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.SerializedFormat.Binary">
+             <summary>
+             Binary serialization format.
+             </summary>
+            </member>
+        <member name="F:ecgmonitor.SerializedFormat.Document">
+             <summary>
+             Document serialization format.
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.XmlClass`1">
+             <summary>
+             Facade to XML serialization and deserialization of strongly typed objects to/from an XML file.
+             
+             References: XML Serialization at http://samples.gotdotnet.com/:
+             http://samples.gotdotnet.com/QuickStart/howto/default.aspx?url=/quickstart/howto/doc/xmlserialization/rwobjfromxml.aspx
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Load(System.String)">
+             <summary>
+             Loads an object from an XML file in Document format.
+             </summary>
+             <example>
+             <code>
+             serializableObject = ObjectXMLSerializer&lt;SerializableObject&gt;.Load(@"C:\XMLObjects.xml");
+             </code>
+             </example>
+             <param name="path">Path of the file to load the object from.</param>
+             <returns>Object loaded from an XML file in Document format.</returns>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Load(System.String,ecgmonitor.SerializedFormat)">
+             <summary>
+             Loads an object from an XML file using a specified serialized format.
+             </summary>
+             <example>
+             <code>
+             serializableObject = ObjectXMLSerializer&lt;SerializableObject&gt;.Load(@"C:\XMLObjects.xml", SerializedFormat.Binary);
+             </code>
+             </example>		
+             <param name="path">Path of the file to load the object from.</param>
+             <param name="serializedFormat">XML serialized format used to load the object.</param>
+             <returns>Object loaded from an XML file using the specified serialized format.</returns>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Load(System.String,System.Type[])">
+             <summary>
+             Loads an object from an XML file in Document format, supplying extra data types to enable deserialization of custom types within the object.
+             </summary>
+             <example>
+             <code>
+             serializableObject = ObjectXMLSerializer&lt;SerializableObject&gt;.Load(@"C:\XMLObjects.xml", new Type[] { typeof(MyCustomType) });
+             </code>
+             </example>
+             <param name="path">Path of the file to load the object from.</param>
+             <param name="extraTypes">Extra data types to enable deserialization of custom types within the object.</param>
+             <returns>Object loaded from an XML file in Document format.</returns>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Load(System.String,System.IO.IsolatedStorage.IsolatedStorageFile)">
+             <summary>
+             Loads an object from an XML file in Document format, located in a specified isolated storage area.
+             </summary>
+             <example>
+             <code>
+             serializableObject = ObjectXMLSerializer&lt;SerializableObject&gt;.Load("XMLObjects.xml", IsolatedStorageFile.GetUserStoreForAssembly());
+             </code>
+             </example>
+             <param name="fileName">Name of the file in the isolated storage area to load the object from.</param>
+             <param name="isolatedStorageDirectory">Isolated storage area directory containing the XML file to load the object from.</param>
+             <returns>Object loaded from an XML file in Document format located in a specified isolated storage area.</returns>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Load(System.String,System.IO.IsolatedStorage.IsolatedStorageFile,ecgmonitor.SerializedFormat)">
+             <summary>
+             Loads an object from an XML file located in a specified isolated storage area, using a specified serialized format.
+             </summary>
+             <example>
+             <code>
+             serializableObject = ObjectXMLSerializer&lt;SerializableObject&gt;.Load("XMLObjects.xml", IsolatedStorageFile.GetUserStoreForAssembly(), SerializedFormat.Binary);
+             </code>
+             </example>		
+             <param name="fileName">Name of the file in the isolated storage area to load the object from.</param>
+             <param name="isolatedStorageDirectory">Isolated storage area directory containing the XML file to load the object from.</param>
+             <param name="serializedFormat">XML serialized format used to load the object.</param>        
+             <returns>Object loaded from an XML file located in a specified isolated storage area, using a specified serialized format.</returns>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Load(System.String,System.IO.IsolatedStorage.IsolatedStorageFile,System.Type[])">
+             <summary>
+             Loads an object from an XML file in Document format, located in a specified isolated storage area, and supplying extra data types to enable deserialization of custom types within the object.
+             </summary>
+             <example>
+             <code>
+             serializableObject = ObjectXMLSerializer&lt;SerializableObject&gt;.Load("XMLObjects.xml", IsolatedStorageFile.GetUserStoreForAssembly(), new Type[] { typeof(MyCustomType) });
+             </code>
+             </example>		
+             <param name="fileName">Name of the file in the isolated storage area to load the object from.</param>
+             <param name="isolatedStorageDirectory">Isolated storage area directory containing the XML file to load the object from.</param>
+             <param name="extraTypes">Extra data types to enable deserialization of custom types within the object.</param>
+             <returns>Object loaded from an XML file located in a specified isolated storage area, using a specified serialized format.</returns>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Save(`0,System.String)">
+             <summary>
+             Saves an object to an XML file in Document format.
+             </summary>
+             <example>
+             <code>        
+             SerializableObject serializableObject = new SerializableObject();
+             
+             ObjectXMLSerializer&lt;SerializableObject&gt;.Save(serializableObject, @"C:\XMLObjects.xml");
+             </code>
+             </example>
+             <param name="serializableObject">Serializable object to be saved to file.</param>
+             <param name="path">Path of the file to save the object to.</param>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Save(`0,System.String,ecgmonitor.SerializedFormat)">
+             <summary>
+             Saves an object to an XML file using a specified serialized format.
+             </summary>
+             <example>
+             <code>
+             SerializableObject serializableObject = new SerializableObject();
+             
+             ObjectXMLSerializer&lt;SerializableObject&gt;.Save(serializableObject, @"C:\XMLObjects.xml", SerializedFormat.Binary);
+             </code>
+             </example>
+             <param name="serializableObject">Serializable object to be saved to file.</param>
+             <param name="path">Path of the file to save the object to.</param>
+             <param name="serializedFormat">XML serialized format used to save the object.</param>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Save(`0,System.String,System.Type[])">
+             <summary>
+             Saves an object to an XML file in Document format, supplying extra data types to enable serialization of custom types within the object.
+             </summary>
+             <example>
+             <code>        
+             SerializableObject serializableObject = new SerializableObject();
+             
+             ObjectXMLSerializer&lt;SerializableObject&gt;.Save(serializableObject, @"C:\XMLObjects.xml", new Type[] { typeof(MyCustomType) });
+             </code>
+             </example>
+             <param name="serializableObject">Serializable object to be saved to file.</param>
+             <param name="path">Path of the file to save the object to.</param>
+             <param name="extraTypes">Extra data types to enable serialization of custom types within the object.</param>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Save(`0,System.String,System.IO.IsolatedStorage.IsolatedStorageFile)">
+             <summary>
+             Saves an object to an XML file in Document format, located in a specified isolated storage area.
+             </summary>
+             <example>
+             <code>        
+             SerializableObject serializableObject = new SerializableObject();
+             
+             ObjectXMLSerializer&lt;SerializableObject&gt;.Save(serializableObject, "XMLObjects.xml", IsolatedStorageFile.GetUserStoreForAssembly());
+             </code>
+             </example>
+             <param name="serializableObject">Serializable object to be saved to file.</param>
+             <param name="fileName">Name of the file in the isolated storage area to save the object to.</param>
+             <param name="isolatedStorageDirectory">Isolated storage area directory containing the XML file to save the object to.</param>
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Save(`0,System.String,System.IO.IsolatedStorage.IsolatedStorageFile,ecgmonitor.SerializedFormat)">
+             <summary>
+             Saves an object to an XML file located in a specified isolated storage area, using a specified serialized format.
+             </summary>
+             <example>
+             <code>        
+             SerializableObject serializableObject = new SerializableObject();
+             
+             ObjectXMLSerializer&lt;SerializableObject&gt;.Save(serializableObject, "XMLObjects.xml", IsolatedStorageFile.GetUserStoreForAssembly(), SerializedFormat.Binary);
+             </code>
+             </example>
+             <param name="serializableObject">Serializable object to be saved to file.</param>
+             <param name="fileName">Name of the file in the isolated storage area to save the object to.</param>
+             <param name="isolatedStorageDirectory">Isolated storage area directory containing the XML file to save the object to.</param>
+             <param name="serializedFormat">XML serialized format used to save the object.</param>        
+            </member>
+        <member name="M:ecgmonitor.XmlClass`1.Save(`0,System.String,System.IO.IsolatedStorage.IsolatedStorageFile,System.Type[])">
+             <summary>
+             Saves an object to an XML file in Document format, located in a specified isolated storage area, and supplying extra data types to enable serialization of custom types within the object.
+             </summary>
+             <example>
+             <code>
+             SerializableObject serializableObject = new SerializableObject();
+             
+             ObjectXMLSerializer&lt;SerializableObject&gt;.Save(serializableObject, "XMLObjects.xml", IsolatedStorageFile.GetUserStoreForAssembly(), new Type[] { typeof(MyCustomType) });
+             </code>
+             </example>		
+             <param name="serializableObject">Serializable object to be saved to file.</param>
+             <param name="fileName">Name of the file in the isolated storage area to save the object to.</param>
+             <param name="isolatedStorageDirectory">Isolated storage area directory containing the XML file to save the object to.</param>
+             <param name="extraTypes">Extra data types to enable serialization of custom types within the object.</param>
+            </member>
+        <member name="T:ecgmonitor.FileHandler">
+             <summary>
+             ECG File Handler
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.begin(System.String)">
+             <summary>
+             Initialize self streaming system
+             </summary>
+             <param name="path">path to file</param>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.available">
+             <summary>
+             
+             </summary>
+             <returns>is file available to read</returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.end">
+             <summary>
+             close stream
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.load(ecgmonitor.Slider)">
+             <summary>
+             load and filter signal
+             </summary>
+             <param name="slider">slider</param>
+             <returns></returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.save(System.String,System.Int64,System.Int64)">
+             <summary>
+             save to file, each block is 512 bytes
+             </summary>
+             <param name="path">path to file</param>
+             <param name="seek">position of block</param>
+             <param name="blocks">blocks to save</param>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.blocksCount">
+             <summary>
+              each block is 512 bytes
+             </summary>
+             <returns>count of all blocks</returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.remainingBlocks">
+             <summary>
+              each block is 512 bytes
+             </summary>
+             <returns>remaining block available to read</returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.setPosition(System.Int64)">
+             <summary>
+             set position to block
+             </summary>
+             <param name="bpos">block position in file</param>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.readBlocks(System.Int64,System.Int64)">
+             <summary>
+             read block and store them as signal samples for processing
+             </summary>
+             <param name="seek">seek to block</param>
+             <param name="count">blocks to read</param>
+             <returns></returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.readSeconds(System.Single,System.Single,System.Int32)">
+             <summary>
+             read from file based on time and sample rate
+             </summary>
+             <param name="start">start time in seconds</param>
+             <param name="lapse">seconds of data to read</param>
+             <param name="sampleRate">data sample rate, sample per seconds</param>
+             <returns></returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.readSampleRate">
+             <summary>
+             read sample rate
+             </summary>
+             <returns>sample rate</returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.readBlock">
+             <summary>
+             read one block as byte array
+             </summary>
+             <returns>read one block</returns>
+            </member>
+        <member name="M:ecgmonitor.FileHandler.readBlock(SignalSamples@)">
+             <summary>
+             read single block as signal
+             </summary>
+             <param name="samples"></param>
+            </member>
+        <member name="M:ecgmonitor.Program.Main">
+             <summary>
+             The main entry point for the application.
+             </summary>
+            </member>
+        <member name="T:ecgmonitor.Properties.Resources">
+             <summary>
+               A strongly-typed resource class, for looking up localized strings, etc.
+             </summary>
+            </member>
+        <member name="P:ecgmonitor.Properties.Resources.ResourceManager">
+             <summary>
+               Returns the cached ResourceManager instance used by this class.
+             </summary>
+            </member>
+        <member name="P:ecgmonitor.Properties.Resources.Culture">
+             <summary>
+               Overrides the current thread's CurrentUICulture property for all
+               resource lookups using this strongly typed resource class.
+             </summary>
+            </member>
+        <member name="T:Signal">
+             <summary>
+             each signal has three lead for simpler calculations
+             </summary>
+            </member>
+        <member name="M:Signal.op_Addition(Signal,Signal)">
+            
+            </member>
+        <member name="M:Signal.FindMin">
+             <summary>
+             find lower lead
+             </summary>
+             <returns></returns>
+            </member>
+        <member name="M:Signal.FindMax">
+             <summary>
+             find higher lead
+             </summary>
+             <returns></returns>
+            </member>
+        <member name="T:ecgmonitor.Settings">
+             <summary>
+             class for store and restoring data
+             </summary>
+            </member>
+        <member name="M:ecgmonitor.Settings.instance">
+             <summary>
+             make instance of current class
+             </summary>
+             <returns></returns>
+            </member>
+    </members>
+</doc>

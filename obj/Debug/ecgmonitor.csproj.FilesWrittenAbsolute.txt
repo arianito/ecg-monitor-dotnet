@@ -1,0 +1,15 @@
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.box.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formProcess.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formTime.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formStatistic.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formPrint.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formSettings.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formMain.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.formAnalyse.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ecgmonitor.Properties.Resources.resources
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/bin/Debug/ECG Monitoring.exe.mdb
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/bin/Debug/ECG Monitoring.pdb
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/bin/Debug/ECG Monitoring.exe
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ECG Monitoring.exe
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ECG Monitoring.exe.mdb
+/Users/alikhani/Projects/Xamarin/ecgmonitor/ecgmonitor/obj/Debug/ECG Monitoring.pdb
